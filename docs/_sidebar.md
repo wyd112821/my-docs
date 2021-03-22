@@ -1,5 +1,14 @@
+- Javascript
+  - [常用工具函数封装](/javascript/utils.md)
+
+- CSS
+  - [常用css代码块](/css/css.md)
+
 - Git
   - [命令](/git/git.md)
 
-- Javascript
-  - [闭包](/cloure.md)
+- 前端包管理器
+  - [npm/yarn](/package/package.md)
+
+- Plugins
+  - [Chrome 实用插件](/plugins/chrome_plugins.md)
