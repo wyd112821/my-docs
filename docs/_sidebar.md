@@ -4,6 +4,9 @@
 - CSS
   - [常用css代码块](/css/css.md)
 
+- Vue
+  - [自定义指令](/vue/directive.md)
+
 - Git
   - [命令](/git/git.md)
 
