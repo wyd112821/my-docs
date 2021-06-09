@@ -204,3 +204,35 @@ function throttle(fn) {
   };
 }
 ```
+
+## cookie相关操作
+```javascript
+function set_c(C, D, h) {
+  exp = new Date();
+  exp.setTime(exp.getTime() + (3600 * 1000 * h));
+  document.cookie = C + "=" + escape(D) + "; expires=" + exp.toGMTString() + "; path=/"
+}
+
+function get_c(C) {
+  var D;
+  D = C + "=";
+  offset = document.cookie.indexOf(D);
+  if (offset != -1) {
+    offset += D.length;
+    end = document.cookie.indexOf(";", offset);
+    if (end == -1) {
+      end = document.cookie.length
+    }
+    ;
+    return unescape(document.cookie.substring(offset, end))
+  } else {
+    return ""
+  }
+}
+
+function del_c(B) {
+  exp = new Date();
+  exp.setTime(exp.getTime() - 10000000);
+  document.cookie = B + "=" + null + "; expires=" + exp.toGMTString() + "; path=/"
+}
+```

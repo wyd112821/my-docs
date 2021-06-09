@@ -6,6 +6,7 @@
 
 - Vue
   - [自定义指令](/vue/directive.md)
+  - [Nuxt爬坑](/vue/nuxt.md)
 
 - Git
   - [命令](/git/git.md)
