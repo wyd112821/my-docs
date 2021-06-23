@@ -24,6 +24,29 @@ a img{border:none;}
 * html .clearfix{zoom: 1;} /* IE6 */
 *:first-child+html .clearfix{zoom: 1;} /* IE7 */
 h1,h2,h3{font-weight: normal;}
+/* 去掉number输入框右边点击上下的小三角 */
+input::-webkit-inner-spin-button{-webkit-appearance: none;}
+input::-webkit-outer-spin-button{-webkit-appearance: none;}
+/*placeholder 文字颜色设置*/
+input::-moz-placeholder,textarea::-moz-placeholder{color: #828897;opacity: 1; font-weight: normal;}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{color: #828897;opacity: 1; font-weight: normal;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color: #828897;opacity: 1; font-weight: normal;}
+/* Chrome浏览器会在输入控制聚集的时候添加一个蓝色的outline*/
+input:focus, textarea:focus, select:focus{outline: none!important;}
+/* 消除input元素 type="number" 时默认的 加减按钮*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{-webkit-appearance: none; margin: 0;}
+/* 消除input元素 type="number" 时默认的 加减按钮---moz版*/
+input[type=number]{-moz-appearance:textfield;}
+/* 去掉select的默认样式 */
+select{-webkit-appearance: none;}
+/* 重置浏览器滚动条的默认样式 */
+::-webkit-scrollbar{width: 10px; height: 10px; overflow: visible}
+::-webkit-scrollbar-thumb{border: solid transparent; border-width: 1px 0; background-clip: padding-box; background: #c6c8cc}
+::-webkit-scrollbar-thumb:hover{background-color: #9198a6}
+::-webkit-scrollbar-button{width: 0; height: 0}
+::-webkit-scrollbar-button:hover{border-color: #5f6366}
+::-webkit-scrollbar-button:vertical:end:decrement,::-webkit-scrollbar-button:vertical:start:increment{display: none}
 
 //移动端
 @charset "utf-8";
