@@ -1,6 +1,3 @@
-### 在线工具 - 你的工具箱
->  [在线工具](https://tool.lu/),开发人员工具,代码格式化、压缩、加密、解密,下载链接转换,json格式化,正则测试工具,favicon在线制作,字帖工具,中文简繁体转换,迅雷下载链接转换,进制转换,二维码。
-
 ### JS/HTML格式化工具
 >  H-ui前端框架之[JS/HTML格式化工具](http://www.h-ui.net/tools/jsformat.shtml)。
 
