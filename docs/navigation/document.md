@@ -13,6 +13,9 @@
 ### 菜鸟教程
 >  [菜鸟教程](https://www.runoob.com/) 提供了编程的基础技术教程, 介绍了HTML、CSS、Javascript、Python，Java，Ruby，C，PHP , MySQL等各种编程语言的基础知识。 同时本站中也提供了大量的在线实例，通过实例，您可以更好的学习编程。
 
+### JS正则表达式语法大全
+>  [JS正则表达式语法大全（非常详细）](http://c.biancheng.net/view/5632.html)
+
 ### Lodash 中文文档
 >  [Lodash](https://www.lodashjs.com/) 是一个一致性、模块化、高性能的 JavaScript 实用工具库。
 
