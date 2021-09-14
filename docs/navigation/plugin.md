@@ -7,8 +7,14 @@
 ### Highcharts
 >  [Highcharts](https://www.highcharts.com.cn/),兼容 IE6+、完美支持移动端、图表类型丰富的 HTML5 交互图表库。
 
+### AntV | 蚂蚁数据可视化
+>  [AntV](https://antv.gitee.io/zh) 是蚂蚁集团全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。
+
 ### Animate.css
 >  [Animate.css](https://animate.style/),一个跨浏览器的CSS动画库。
+
+### Hover.css
+>  [Hover.css](http://ianlunn.github.io/Hover/) 一个CSS3驱动的悬停效果的集合，应用于链接，按钮，徽标，SVG，特色图像等。
 
 ### Velocity.js
 >  [Velocity.js](http://velocityjs.org/):一个非常快的动画引擎。
@@ -30,3 +36,12 @@
 
 ### VeeValidate
 >  [VeeValidate](https://vee-validate.logaretm.com/),Vue.js的表单验证
+
+### Moment.js
+>  [Moment.js](https://momentjs.com/) 是一个解析，验证，操作和显示日期和时间的 JavaScript 类库。
+
+### Day.js
+>  [Day.js](https://dayjs.gitee.io/zh-CN/) 是 Moment.js 的 2kB 轻量化方案，拥有同样强大的 API。
+
+### wangEditor
+>  [wangEditor](https://www.wangeditor.com/) 是 Typescript 开发的 Web 富文本编辑器， 轻量、简洁、易用、开源免费。
