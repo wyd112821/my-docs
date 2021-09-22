@@ -28,3 +28,6 @@
 
 - Plugins
   - [Chrome 实用插件](/plugins/chrome_plugins.md)
+
+- 个人随笔
+  - [个人成长模型](/notes/note1.md)

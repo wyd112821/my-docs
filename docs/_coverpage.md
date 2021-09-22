@@ -1,14 +1,15 @@
-![logo](https://docsify.js.org/_media/icon.svg)
+<img src="/img/header_icon.png" width="140" height="140" align=center />
 
-# docsify <big>3.5</big>
+# Brennan's document library
 
-> 一个神奇的文档站点生成器。
+> 一名前端工程师的文档库
 
-- Simple and lightweight
-- No statically built html files
-- Multiple themes
+- All the way adhere to the people, 
+- and the mountains are the most beautiful scenery
+- 一路坚持的人，都和山色一样是最美的景
+- --Brennan Wu
 
 [GitHub](https://github.com/docsifyjs/docsify/)
-[Get Started](/git/git.md.md)
+[Get Started](/README.md)
 
 ![](img/bg.jpg)
