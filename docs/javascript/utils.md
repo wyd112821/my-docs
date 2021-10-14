@@ -248,7 +248,7 @@ function flatten(arr) {
 }
 ```
 
-## 多层嵌套数据结构,根据最子级获取所以父级
+## 多层嵌套数据结构,根据最子级获取所有父级
 
 ```javascript
 function childFindParents(target, val) {
