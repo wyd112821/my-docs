@@ -248,6 +248,24 @@ function flatten(arr) {
 }
 ```
 
+## 多层嵌套数据结构,根据最子级获取所以父级
+
+```javascript
+function childFindParents(target, val) {
+    for (var i = 0; i < target.length; i++) {
+        if (target[i] && target[i].value == val) {
+            return [];
+        }
+        if (target[i].children && target[i].children.length) {
+            var parents = childFindParents(target[i].children, val);
+            if (parents) {
+                return parents.concat(target[i].value);
+            }
+        }
+    }
+}
+```
+
 ## 函数防抖
 
 > 触发高频事件后 n 秒内函数只会执行一次，如果 n 秒内高频事件再次被触发，则重新计算时间
