@@ -46,6 +46,9 @@
 ### 微信公众平台
 >  [微信公众平台](https://mp.weixin.qq.com/)，给个人、企业和组织提供业务服务与用户管理能力的全新服务平台。
 
+### 钉钉开放平台
+>  [钉钉开放平台](https://open.dingtalk.com/)，钉钉开放平台官网，应用开发，合作伙伴，应用市场。
+
 ### docsify
 >  [docsify](https://docsify.js.org/#/),一个神奇的文档生成器。
 
