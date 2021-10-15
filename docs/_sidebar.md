@@ -1,6 +1,7 @@
 - 我的导航
   - [学习文档类](/navigation/document.md) 
   - [框架类](/navigation/framework.md) 
+  - [UI库类](/navigation/library.md) 
   - [插件类](/navigation/plugin.md) 
   - [资源类](/navigation/resources.md) 
   - [设计类](/navigation/design.md) 
