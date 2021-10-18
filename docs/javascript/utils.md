@@ -1,6 +1,6 @@
 # 常用工具函数封装
 
-## 获取地址栏参数
+## 获取 URL 参数列表
 
 ```javascript
 function getUrlParam() {
@@ -10,6 +10,54 @@ function getUrlParam() {
         _obj[_arr[i].split('=')[0]] = _arr[i].split('=')[1];
     }
     return _obj;
+}
+```
+
+## 键值对拼接成 URL 参数
+
+```javascript
+function params2Url(obj) {
+    let params = [];
+    for (let key in obj) {
+        params.push(`${key}=${obj[key]}`);
+    }
+    return encodeURIComponent(params.join('&'));
+}
+```
+
+## 修改 URL 中的参数
+
+```javascript
+function replaceParamVal(paramName, replaceWith) {
+    const oUrl = location.href.toString();
+    const re = eval('/(' + paramName + '=)([^&]*)/gi');
+    location.href = oUrl.replace(re, paramName + '=' + replaceWith);
+    return location.href;
+}
+```
+
+## 删除 URL 中指定参数
+
+```javascript
+function funcUrlDel(name) {
+    const baseUrl = location.origin + location.pathname + '?';
+    const query = location.search.substr(1);
+    if (query.indexOf(name) > -1) {
+        const obj = {};
+        const arr = query.split('&');
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].split('=');
+            obj[arr[i][0]] = arr[i][1];
+        }
+        delete obj[name];
+        return (
+            baseUrl +
+            JSON.stringify(obj)
+                .replace(/[\"\{\}]/g, '')
+                .replace(/\:/g, '=')
+                .replace(/\,/g, '&')
+        );
+    }
 }
 ```
 
@@ -168,11 +216,44 @@ function getViewport() {
 }
 ```
 
+## 滚动到页面顶部
+
+```javascript
+function scrollToTop() {
+    const height =
+        document.documentElement.scrollTop || document.body.scrollTop;
+    if (height > 0) {
+        window.requestAnimationFrame(scrollToTop);
+        window.scrollTo(0, height - height / 8);
+    }
+}
+```
+
+## 滚动到指定元素区域
+
+```javascript
+function smoothScroll(element) {
+    document.querySelector(element).scrollIntoView({
+        behavior: 'smooth',
+    });
+}
+```
+
 ## 判断是否移动设备访问
 
 ```javascript
 function isMobileUserAgent() {
     return /iphone|ipod|android.*mobile|windows.*phone|blackberry.*mobile/i.test(
+        window.navigator.userAgent.toLowerCase()
+    );
+}
+```
+
+## 判断是否是苹果还是安卓移动设备
+
+```javascript
+function isAppleMobileDevice() {
+    return /iphone|ipod|ipad|Macintosh/i.test(
         window.navigator.userAgent.toLowerCase()
     );
 }
@@ -335,4 +416,71 @@ function del_c(B) {
     document.cookie =
         B + '=' + null + '; expires=' + exp.toGMTString() + '; path=/';
 }
+```
+
+## 生成指定范围随机数
+
+```javascript
+function randomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+```
+
+## 数字千分位分隔
+
+```javascript
+function formatThousandth(n) {
+    let num = n.toString();
+    let len = num.length;
+    if (len <= 3) {
+        return num;
+    } else {
+        let remainder = len % 3;
+        if (remainder > 0) {
+            // 不是3的整数倍
+            return (
+                num.slice(0, remainder) +
+                ',' +
+                num.slice(remainder, len).match(/\d{3}/g).join(',')
+            );
+        } else {
+            // 3的整数倍
+            return num.slice(0, len).match(/\d{3}/g).join(',');
+        }
+    }
+}
+```
+
+## 手机号中间四位变成\*
+
+```javascript
+function telFormat(tel) {
+    tel = String(tel);
+    return tel.substr(0, 3) + '****' + tel.substr(7);
+}
+```
+
+## 格式化时间
+
+```javascript
+function dateFormater(formater, time) {
+    let date = time ? new Date(time) : new Date(),
+        Y = date.getFullYear() + '',
+        M = date.getMonth() + 1,
+        D = date.getDate(),
+        H = date.getHours(),
+        m = date.getMinutes(),
+        s = date.getSeconds();
+    return formater
+        .replace(/YYYY|yyyy/g, Y)
+        .replace(/YY|yy/g, Y.substr(2, 2))
+        .replace(/MM/g, (M < 10 ? '0' : '') + M)
+        .replace(/DD/g, (D < 10 ? '0' : '') + D)
+        .replace(/HH|hh/g, (H < 10 ? '0' : '') + H)
+        .replace(/mm/g, (m < 10 ? '0' : '') + m)
+        .replace(/ss/g, (s < 10 ? '0' : '') + s);
+}
+
+// dateFormater('YYYY-MM-DD HH:mm:ss')
+// dateFormater('YYYYMMDDHHmmss')
 ```
