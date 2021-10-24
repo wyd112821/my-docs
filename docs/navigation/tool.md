@@ -52,6 +52,12 @@
 ### docsify
 >  [docsify](https://docsify.js.org/#/),一个神奇的文档生成器。
 
+### hexo
+>  [hexo](https://hexo.io/zh-cn/),快速、简洁且高效的博客框架。
+
+### hexo-theme-keep
+>  [hexo-theme-keep](https://keep-docs.xpoet.cn/),一款简约且优雅的 Hexo 主题。  
+
 ### JSON Web Tokens
 >  [SON Web令牌(JWT)](https://jwt.io/)是一种紧凑的url安全方式，用于表示双方之间传输的声明。JWT中的声明被编码为使用JSON Web签名(JWS)进行数字签名的JSON对象。
 
