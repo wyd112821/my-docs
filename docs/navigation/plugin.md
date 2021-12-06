@@ -45,3 +45,6 @@
 
 ### wangEditor
 >  [wangEditor](https://www.wangeditor.com/) 是 Typescript 开发的 Web 富文本编辑器， 轻量、简洁、易用、开源免费。
+
+### TinyMCE
+> [TinyMCE](http://tinymce.ax-z.cn/) 是一款易用、且功能强大的所见即所得的富文本编辑器。
