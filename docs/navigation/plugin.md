@@ -48,3 +48,6 @@
 
 ### TinyMCE
 > [TinyMCE](http://tinymce.ax-z.cn/) 是一款易用、且功能强大的所见即所得的富文本编辑器。
+
+### js-cookie
+> [js-cookie](https://www.npmjs.com/package/js-cookie) 一个用于处理cookie的简单、轻量级JavaScript API
