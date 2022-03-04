@@ -34,6 +34,9 @@
 ### jQuery之家
 >  [jQuery之家](http://www.htmleaf.com/),自由分享jQuery、html5、css3的插件库
 
+### Vue 插件库
+>  [Vue 插件库](https://www.vue365.cn/),Vue插件,Vue 中文插件大全,Vue 插件使用教程,Vue 插件下载
+
 ### VeeValidate
 >  [VeeValidate](https://vee-validate.logaretm.com/),Vue.js的表单验证
 
