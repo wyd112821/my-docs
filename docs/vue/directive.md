@@ -459,3 +459,42 @@ export default draggable
 </style>
 ```
 
+## v-waterMarker
+> 需求：给整个页面添加背景水印
+
+```javascript
+// 思路：
+// 使用 canvas 特性生成 base64 格式的图片文件，设置其字体大小，颜色等。
+// 将其设置为背景图片，从而实现页面或组件水印效果
+
+function addWaterMarker (str, parentNode, font, textColor) {
+  // 水印文字，父元素，字体，文字颜色
+  var canvas = document.createElement('canvas');
+  parentNode.appendChild(canvas);
+  canvas.width = 200;
+  canvas.height = 150;
+  canvas.style.display = 'none';
+  var context = canvas.getContext('2d');
+  context.rotate(-20 * Math.PI / 180);
+  context.font = font || '16px Microsoft JhengHei';
+  context.fillStyle = textColor || 'rgba(180, 180, 180, 0.3)';
+  context.textAlign = 'left';
+  context.textBaseline = 'middle';
+  context.fillText(str, canvas.width / 10, canvas.height / 2);
+  parentNode.style.backgroundImage = 'url(' + canvas.toDataURL('image/png') + ')';
+}
+
+const waterMarker = {
+  bind: function (el, binding) {
+    addWaterMarker(binding.value.text, el, binding.value.font, binding.value.textColor)
+  },
+}
+
+export default waterMarker
+```
+
+```html
+<template>
+  <div v-waterMarker="{text:'版权所有',textColor:'rgba(180, 180, 180, 0.4)'}"></div>
+</template>
+```
