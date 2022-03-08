@@ -498,3 +498,47 @@ export default waterMarker
   <div v-waterMarker="{text:'版权所有',textColor:'rgba(180, 180, 180, 0.4)'}"></div>
 </template>
 ```
+
+## v-tooltip
+> 需求：给绑定的节点添加文字提示说明框
+
+```javascript
+// 思路：
+// 结合antd框架中的tooltip组件
+// 通过传给指令参数和绑定值来为元素添加说明
+
+function structureIcon (content, attrs) {
+  //拼接绑定属性
+  let attrStr = '';
+  for (let key in attrs) {
+    attrStr += `${key}=${attrs[key]}`;
+  }
+  const a = `<a-tooltip title='${content}' ${attrStr}></a-tooltip>`;
+  // 创建构造器
+  const tooltip = Vue.extend({
+    template: a
+  })
+  // 创建一个 tooltip 实例并返回 dom 节点
+  const component = new tooltip().$mount()
+  return component.$el
+}
+
+const tooltip = {
+  bind: function (el, binding) {
+    if (el.hasIcon) return;
+    const iconElement = structureIcon(binding.arg, binding.value);
+    iconElement.innerHTML = el.innerHTML;
+    el.innerHTML = '';
+    el.appendChild(iconElement);
+    el.hasIcon = true;
+  }
+}
+
+export default tooltip
+```
+
+```html
+<template>
+  <div v-tooltip:提示内容为XXX='tootipParams'> 提示2 </div>
+</template>
+```
