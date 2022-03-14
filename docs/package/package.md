@@ -1,4 +1,4 @@
-# npm/yarn 常用命令
+# npm/yarn/nvm 常用命令
 
 ## 查看版本
 
@@ -143,4 +143,39 @@ yarn cache
 sudo yarn cache list # 列出已缓存的每个包
 sudo yarn cache dir # 返回 全局缓存位置
 sudo yarn cache clean # 清除缓存
+```
+
+## 开启node
+```bas
+nvm on
+```
+
+## 关闭node
+```bas
+nvm off
+```
+
+## 安装指定版本号node
+```bas
+nvm install <version>
+```
+
+## 卸载指定版本号的node
+```bas
+nvm uninstall <version>
+```
+
+## 查看已安装的所有node版本
+```bas
+nvm ls/list
+```
+
+## 查看能安装的所有node版本
+```bas
+nvm ls/list available
+```
+
+## 使用指定版本号的node
+```bas
+nvm use <version>
 ```
