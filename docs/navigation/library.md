@@ -25,3 +25,7 @@
 ### Naive UI
 
 > [Naive UI](https://www.naiveui.com/zh-CN/os-theme)，一个 Vue 3 组件库，比较完整，主题可调，使用 TypeScript，不算太慢，有点意思。
+
+### uView
+
+> [uView](https://www.uviewui.com/) - 全面兼容nvue的uni-app生态框架 - uni-app UI框架。

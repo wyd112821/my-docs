@@ -4,5 +4,5 @@
 ### Nuxt.js
 >  [Nuxt.js](https://www.nuxtjs.cn/) 是一个基于 Vue.js 的轻量级应用框架，可用来创建服务端渲染 (SSR) 应用，也可充当静态站点引擎生成静态站点应用，具有优雅的代码结构分层和热加载等特性。
 
-### mpvue
-> [mpvue](http://mpvue.com/)，一个使用 Vue.js 开发小程序的前端框架。
+### uni-app
+> [uni-app](https://uniapp.dcloud.io/) uni-app：一个使用 Vue.js 开发跨平台应用的前端框架。
