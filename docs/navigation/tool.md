@@ -78,3 +78,6 @@
 
 ### MD5在线加密工具
 >  [MD5在线加密工具](https://md5jiami.bmcx.com/),MD5在线加密 - MD5加密工具 - MD5在线生成。
+
+### CODELF
+>  [CODELF](https://unbug.github.io/codelf/),变量方法起名工具，人工智能加持 。
