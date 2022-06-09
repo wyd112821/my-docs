@@ -57,3 +57,6 @@
 
 ### js-cookie
 > [js-cookie](https://www.npmjs.com/package/js-cookie) 一个用于处理cookie的简单、轻量级JavaScript API
+
+### AutoAnimate
+> [auto-animate](https://auto-animate.formkit.com/) 一个零配置、开箱即用的动画工具，可流畅运行在你的 Web 应用中，可同 React、Vue 或者是其他 Javascript 程序一起使用。只用一行代码，你可以实现列表排序、增减选项等等功能。
