@@ -18,6 +18,10 @@
 
 > [《ECMAScript 6 入门教程》](https://es6.ruanyifeng.com/) 是一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性。
 
+### TypeScript中文网
+
+> [《TypeScript中文网》](https://www.tslang.cn/) Typescript是Javascript类型的超集，它可以编译成纯Javascript。Typescript可以在任何浏览器、任何计算机和任务操作系统上运行，并且是开源的。
+
 ### 菜鸟教程
 
 > [菜鸟教程](https://www.runoob.com/) 提供了编程的基础技术教程, 介绍了 HTML、CSS、Javascript、Python，Java，Ruby，C，PHP , MySQL 等各种编程语言的基础知识。 同时本站中也提供了大量的在线实例，通过实例，您可以更好的学习编程。
