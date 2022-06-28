@@ -497,3 +497,96 @@ toFixed(25.198726354, 4);       // 25.1987
 toFixed(25.198726354, 5);       // 25.19872
 toFixed(25.198726354, 6);       // 25.198726
 ```
+
+## localStorage / sessionStorage 相关操作
+
+```javascript
+// 对本地存储的简单封装
+
+//定义参数 类型 window.localStorage,window.sessionStorage,
+const config = {
+    type: 'localStorage', // 本地存储类型 localStorage/sessionStorage
+    prefix: 'SDF_0.0.1', // 名称前缀 建议：项目名 + 项目版本
+    expire: 1, //过期时间 单位：秒
+}
+
+// 名称前自动添加前缀
+const autoAddPrefix = (key) => {
+    const prefix = config.prefix ? config.prefix + '_' : '';
+    return  prefix + key;
+}
+
+// 设置 setStorage
+const setStorage = (key,value,expire=0) => {
+    if (value === '' || value === null || value === undefined) {
+        value = null;
+    }
+
+    if (isNaN(expire) || expire < 1) throw new Error("Expire must be a number");
+
+    expire = (expire?expire:config.expire) * 60000;
+    let data = {
+        value: value, // 存储值
+        time: Date.now(), //存值时间戳
+        expire: expire // 过期时间
+    }
+
+    window[config.type].setItem(autoAddPrefix(key), JSON.stringify(data));
+}
+
+// 获取 getStorage
+const getStorage = (key) => {
+    let prefix_key = autoAddPrefix(key);
+    // key 不存在判断
+    if (!window[config.type].getItem(prefix_key) || JSON.stringify(window[config.type].getItem(prefix_key)) === 'null'){
+        return null;
+    }
+
+    // 优化 持续使用中续期
+    const storage = JSON.parse(window[config.type].getItem(prefix_key));
+    let nowTime = Date.now();
+    // 过期删除
+    if (storage.expire && config.expire*6000 < (nowTime - storage.time)) {
+        removeStorage(key);
+        return null;
+    } else {
+        // 未过期期间被调用 则自动续期 进行保活
+        setStorage(prefix_key,storage.value);
+        return storage.value;
+    }
+}
+
+// 获取全部 getAllStorage
+const getAllStorage = () => {
+    let len = window[config.type].length // 获取长度
+    let arr = new Array() // 定义数据集
+    for (let i = 0; i < len; i++) {
+        // 获取key 索引从0开始
+        let getKey = window[config.type].key(i)
+        // 获取key对应的值
+        let getVal = window[config.type].getItem(getKey)
+        // 放进数组
+        arr[i] = { 'key': getKey, 'val': getVal, }
+    }
+    return arr
+}
+
+// 删除 removeStorage
+const removeStorage = (key) => {
+    window[config.type].removeItem(autoAddPrefix(key));
+}
+
+// 清空 clearStorage
+const clearStorage = () => {
+    window[config.type].clear();
+}
+
+// 是否存在 hasStorage
+const hasStorage = (key) => {
+    key = autoAddPrefix(key);
+    let arr = getStorageAll().filter((item)=>{
+        return item.key === key;
+    })
+    return arr.length ? true : false;
+}
+```
