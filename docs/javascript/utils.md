@@ -61,6 +61,21 @@ function funcUrlDel(name) {
 }
 ```
 
+## 获取 URL 参数值
+
+```javascript
+function getUrlQuery(name) {
+    // 获取参数
+    var url = window.location.search;
+    // 正则筛选地址栏
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    // 匹配目标参数
+    var result = url.substr(1).match(reg);
+    //返回参数值
+    return result ? decodeURIComponent(result[2]) : null;
+}
+```
+
 ## 动态追加 Class
 
 ```javascript
@@ -259,6 +274,14 @@ function isAppleMobileDevice() {
 }
 ```
 
+## 判断是否为数组
+
+```javascript
+function isArray(arr) {
+  return Object.prototype.toString.call(arr) === '[object Array]';
+}
+```
+
 ## 从数组随机取不重复的值
 
 ```javascript
@@ -326,6 +349,41 @@ function flatten(arr) {
     return arr.reduce(function (prev, next) {
         return prev.concat(Array.isArray(next) ? flatten(next) : next);
     }, []);
+}
+```
+
+## 数组拆分
+
+```javascript
+/**
+ * @param {Array} arr 要拆分的数组
+ * @param {Number} size 要拆分的数量
+ */
+function chunk(arr, size) {
+    var result = [];
+    for (var i = 0; i < Math.ceil(arr.length / size); i++) {
+        var start = i * size;
+        var end = start + size;
+        result.push(arr.slice(start, end));
+    }
+    return result;
+}
+```
+
+## 检测数组项是否存在
+
+```javascript
+/**
+ * @param {String} item 检索的项
+ * @param {Array} arr 所在数组
+ */
+function inArray(item, arr){
+    for(var i in arr){
+        if(arr[i] == item){
+        return true;
+        }
+    }
+    return false;
 }
 ```
 
@@ -589,4 +647,31 @@ const hasStorage = (key) => {
     })
     return arr.length ? true : false;
 }
+```
+
+## 判断是否为函数
+
+```javascript
+function isFunction(value) {
+  return Object.prototype.toString.call(value) === '[object Function]'
+}
+```
+
+## 删除左右两端空格
+
+```javascript
+function trim(str) {
+  let reg = /^\s*|\s*$/g;　　
+  return String(str).replace(reg, "");
+}
+```
+
+## 禁止右键、选择、复制
+
+```javascript
+['contextmenu', 'selectstart', 'copy'].forEach(function(ev){
+  document.addEventListener(ev, function(event){
+      return event.returnValue = false
+  })
+});
 ```
