@@ -10,6 +10,9 @@
 ### AntV | 蚂蚁数据可视化
 >  [AntV](https://antv.gitee.io/zh) 是蚂蚁集团全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。
 
+### vue-echarts
+>  [vue-echarts](https://github.com/ecomfe/vue-echarts/blob/HEAD/README.zh-Hans.md) Apache ECharts 的 Vue.js 组件，同时支持 Vue.js 2/3。
+
 ### v-charts
 >  [v-charts](https://vue-echarts.github.io/) 基于 Vue2.x 的 Echarts 组件
 
