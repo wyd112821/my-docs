@@ -670,8 +670,22 @@ function trim(str) {
 
 ```javascript
 ['contextmenu', 'selectstart', 'copy'].forEach(function(ev){
-  document.addEventListener(ev, function(event){
-      return event.returnValue = false
-  })
+    document.addEventListener(ev, function(event){
+        return event.returnValue = false
+    })
 });
+```
+
+## 函数只执行一次
+
+```javascript
+function once(fn) {
+    let called = false
+    return function () {
+        if (!called) {
+        called = true
+        fn.apply(this, arguments)
+        }
+    }
+}
 ```
