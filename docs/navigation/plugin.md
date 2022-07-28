@@ -63,3 +63,9 @@
 
 ### AutoAnimate
 > [auto-animate](https://auto-animate.formkit.com/) 一个零配置、开箱即用的动画工具，可流畅运行在你的 Web 应用中，可同 React、Vue 或者是其他 Javascript 程序一起使用。只用一行代码，你可以实现列表排序、增减选项等等功能。
+
+### ckplayer
+> [ckplayer](https://www.ckplayer.com/) 支持http协议下的flv,f4v,mp4,支持rtmp视频流和rtmp视频回放，支持m3u8格式，是你做视频直播，视频点播的理想播放器。
+
+### 西瓜播放器
+> [西瓜播放器](https://v2.h5player.bytedance.com/) 一款带解析器、节省流量的HTML5视频播放器。
