@@ -542,3 +542,47 @@ export default tooltip
   <div v-tooltip:提示内容为XXX='tootipParams'> 提示2 </div>
 </template>
 ```
+
+## v-keypress
+> 需求：给绑定的节点添加键盘回车事件
+
+```javascript
+// 思路：
+// 定义一个延迟执行的方法，如果在延迟时间内再调用该方法，则重新计算执行时间
+// 将事件绑定在 keypress 方法上
+// 判断键盘回车后执行
+const keypress = {
+  inserted: function (el, binding) {
+    let timer;
+    el.addEventListener("keypress", (evt) => {
+      if (evt.keyCode == 13) {
+        if (timer) {
+          clearTimeout(timer);
+        } else {
+          timer = setTimeout(() => {
+            bindling.value();
+          }, 500);
+        }
+      }
+    });
+  }
+}
+
+export default keypress
+```
+
+```html
+<template>
+  <button v-keypress="handlers">回车</button>
+</template>
+
+<script>
+export default {
+  methods: {
+    handlers () {
+      console.log('回车')
+    }
+  }
+}
+</script>
+```

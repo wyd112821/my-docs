@@ -689,3 +689,36 @@ function once(fn) {
     }
 }
 ```
+
+### 类型判断
+
+```javascript
+/**
+ * @param {*} target 目标
+ * @returns {*} 返回类型 Array/Object/String/Number...
+ */
+function getType(target){
+    return Object.prototype.toString.call(target).match(/\s+(\w+)/)[1];
+}
+```
+
+### 对象数组深拷贝
+```javascript
+/**
+ * @param obj 拷贝的目标
+ * @returns {*}
+ */
+function deepCopy(obj){
+    //判断是深拷贝对象还是数组
+    let newObj = getType(obj) === "Array" ? [] : {};
+    for (const i in obj) {
+        if (typeof obj[i] === "object") {
+        // 如果要拷贝的对象的属性依然是个复合类型，递归
+        newObj[i] = deepCopy(obj[i]);
+        } else {
+        newObj[i] = obj[i];
+        }
+    }
+    return newObj;
+}
+```
