@@ -69,3 +69,6 @@
 
 ### 西瓜播放器
 > [西瓜播放器](https://v2.h5player.bytedance.com/) 一款带解析器、节省流量的HTML5视频播放器。
+
+### DPlayer
+> [西瓜播放器](http://dplayer.js.org/zh/) 一款可爱的HTML5 danmaku视频播放器。
