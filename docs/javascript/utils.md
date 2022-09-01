@@ -690,7 +690,7 @@ function once(fn) {
 }
 ```
 
-### 类型判断
+## 类型判断
 
 ```javascript
 /**
@@ -702,7 +702,7 @@ function getType(target){
 }
 ```
 
-### 对象数组深拷贝
+## 对象数组深拷贝
 ```javascript
 /**
  * @param obj 拷贝的目标
@@ -721,4 +721,84 @@ function deepCopy(obj){
     }
     return newObj;
 }
+```
+
+## 遍历树节点
+
+```javascript
+/**
+ * @param data 遍历的目标
+ * @param callback 遍历每项的回调函数
+ * @param childrenName 子节点的参数名
+ * @returns {Object}
+ */
+
+const foreachTree = (data, callback, childrenName = "children") => {
+  for (let i = 0; i < data.length; i++) {
+    callback(data[i]);
+    if (data[i][childrenName] && data[i][childrenName].length > 0) {
+      foreachTree(data[i][childrenName], callback, childrenName);
+    }
+  }
+};
+
+const treeData = [
+  {
+    id: 1,
+    label: "一级 1",
+    children: [
+      {
+        id: 4,
+        label: "二级 1-1",
+        children: [
+          {
+            id: 9,
+            label: "三级 1-1-1"
+          },
+          {
+            id: 10,
+            label: "三级 1-1-2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    label: "一级 2",
+    children: [
+      {
+        id: 5,
+        label: "二级 2-1"
+      },
+      {
+        id: 6,
+        label: "二级 2-2"
+      }
+    ]
+  },
+  {
+    id: 3,
+    label: "一级 3",
+    children: [
+      {
+        id: 7,
+        label: "二级 3-1"
+      },
+      {
+        id: 8,
+        label: "二级 3-2"
+      }
+    ]
+  }
+];
+
+let result;
+foreachTree(treeData, (item) => {
+  if (item.id === 3) {
+    result = item;
+  }
+});
+
+console.log("result", result); // {id: 9, label: "三级 1-1-1"}
 ```
